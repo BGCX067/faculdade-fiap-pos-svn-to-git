@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration >
+
+    <appender name="consoleAppender" class="org.apache.log4j.ConsoleAppender">
+        <param name="Target" value="System.out" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="[%p] %t %d{dd-MM-yyyy HH:mm:ss} %c %M - %m%n" />
+        </layout>
+    </appender>
+    
+
+	
+	<appender name="fileAppender" class="org.apache.log4j.RollingFileAppender">
+        <param name="file" value="aspecto.log" />
+        <param name="MaxFileSize" value="1MB" />
+        <param name="MaxBackupIndex" value="30" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="[%p] %t %d{dd-MM-yyyy HH:mm:ss} %c %M - %m%n" />
+        </layout>
+   </appender>
+   
+   <appender name="vendas" class="org.apache.log4j.RollingFileAppender">
+        <param name="file" value="vendas.log" />
+        <param name="MaxFileSize" value="1MB" />
+        <param name="MaxBackupIndex" value="30" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="[%p] %t %d{dd-MM-yyyy HH:mm:ss} %c %M - %m%n" />
+        </layout>
+   </appender>
+
+    <root>
+        <priority value="info" />
+       <!--  <appender-ref ref="consoleAppender" /> -->
+      <!--   <appender-ref ref="jdbc" /> -->
+      <appender-ref ref="fileAppender" />
+      <appender-ref ref="consoleAppender" />
+      
+    </root>
+</log4j:configuration>

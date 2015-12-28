@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://dozer.sourceforge.net
+ http://dozer.sourceforge.net/schema/beanmapping.xsd">
+
+
+
+	<mapping>
+		<class-a>br.com.vo.PessoaVO</class-a>
+		<class-b>br.com.entity.Pessoa</class-b>
+		<field>
+			<a>nme</a>
+			<b>nome</b>
+		</field>
+		<field >
+			<a date-format="dd/MM/yyyy">nascimento</a>
+			<b>nascimento</b>
+		</field>
+		
+	</mapping>
+
+</mappings>

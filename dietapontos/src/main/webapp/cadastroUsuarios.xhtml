@@ -1,0 +1,53 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<link href="css/style.css" rel="stylesheet" type="text/css" />
+	<title>Login</title>
+</h:head>
+<h:body>
+	<div id="boxCadastro">
+		<div class="elements">
+			<div class="avatar"></div>
+			<h:form>
+				<h:inputText id="usernametxt" class="username"
+					value="#{cadastroUsuariosManagedBean.usuario.email}" />
+				<p:watermark for="usernametxt" value="E-mail" />
+
+				<h:inputSecret id="passwordtxt" class="password"
+					value="#{cadastroUsuariosManagedBean.usuario.senha}" />
+				<p:watermark for="passwordtxt" value="Password" />
+
+				<h:inputText id="agetxt" class="blanktxt"
+					value="#{cadastroUsuariosManagedBean.usuario.idade}" />
+				<p:watermark for="agetxt" value="Age" />
+
+				<h:inputText id="sizetxt" class="blanktxt"
+					value="#{cadastroUsuariosManagedBean.usuario.altura}" />
+				<p:watermark for="sizetxt" value="Size in cm" />
+
+				<h:inputText id="weighttxt" class="blanktxt"
+					value="#{cadastroUsuariosManagedBean.usuario.peso}" />
+				<p:watermark for="weighttxt" value="Weight in kg" />
+				
+				<h:inputText id="gender" class="blanktxt"
+					value="#{cadastroUsuariosManagedBean.usuario.sexo}" />
+				<p:watermark for="gender" value="Gender" />
+				
+				<h:inputText id="activityLevel" class="blanktxt"
+					value="#{cadastroUsuariosManagedBean.usuario.taxaAtividade}" />
+				<p:watermark for="activityLevel" value="Activity Level" />
+
+				<h:selectOneMenu value="#{cadastroUsuariosManagedBean.tipoU}">
+					<f:selectItems value="#{cadastroUsuariosManagedBean.tipoUsuario}" />
+				</h:selectOneMenu>
+				<h:commandButton value="SignUp" class="submit"
+					action="#{cadastroUsuariosManagedBean.cadastrar}" />
+			</h:form>
+		</div>
+	</div>
+</h:body>
+</html>

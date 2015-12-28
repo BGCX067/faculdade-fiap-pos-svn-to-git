@@ -1,0 +1,1 @@
+cmd executar odbcad32.exe

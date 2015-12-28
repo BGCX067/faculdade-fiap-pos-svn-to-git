@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Formulário de Impugnação e Recurso</title>
+  <style>
+	@page {
+	  size: A4;
+	  margin: 2;
+	}
+	@media print {
+	  html, body {
+	    width: 210mm;
+	    height: 297mm;
+	  }
+	}
+	
+	p.titulo {
+		font: bold 15px arial, sans-serif;
+	}
+	
+	p.titulo.table {
+		color:white;
+		font: bold 15px arial, sans-serif ;
+	}
+	
+	p.texto {
+		font: 15px arial, sans-serif;
+	}
+	
+	table, th {
+		border: 1px solid black;
+	}
+	
+	table td {
+	    overflow: hidden;
+	  
+	    white-space: nowrap;
+	}
+	
+	body{
+	-webkit-print-color-adjust:exact;
+}
+
+
+</style>
+  
+</head>
+
+<body>
+
+	<div align="center">
+		<p class="titulo">$variavel </p>
+		
+		<table width="800"  >
+			  <tr>
+			    <td bgcolor="#000000" border="1"><p  class="titulo.table">Operadora</p></td>
+			  </tr>
+			  <tr>
+			     <td><p class="texto">Tipo de Petição*: (  ) Impugnação (  ) Recurso</p></td>
+			  </tr>
+		</table>
+		
+	</div>
+  
+
+  
+
+</body>
+
+</html>

@@ -1,0 +1,1689 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://autorizador.portalws.susis.sulamerica.com.br" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://autorizador.portalws.susis.sulamerica.com.br" xmlns:intf="http://autorizador.portalws.susis.sulamerica.com.br" xmlns:tns1="http://to.autorizador.portalws.susis.sulamerica.com.br" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: #axisVersion#
+Built on #today#-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://autorizador.portalws.susis.sulamerica.com.br" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://to.autorizador.portalws.susis.sulamerica.com.br"/>
+   <element name="validaDadosAtendimento">
+    <complexType>
+     <sequence>
+      <element name="codigoBeneficiario" type="xsd:string"/>
+      <element name="codigoPrestador" type="xsd:string"/>
+      <element name="numeroConselho" type="xsd:string"/>
+      <element name="tipoSolicitacao" type="xsd:string"/>
+      <element name="tipoDocumento" type="xsd:string"/>
+      <element name="numeroDocumento" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="validaDadosAtendimentoResponse">
+    <complexType>
+     <sequence>
+      <element name="validaDadosAtendimentoReturn" type="tns1:RetornoAutorizador"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="ArrayOf_xsd_string">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <element name="validarDadosAtendimento">
+    <complexType>
+     <sequence>
+      <element name="codigoBeneficiario" type="xsd:string"/>
+      <element name="codigoPrestador" type="xsd:string"/>
+      <element name="numeroConselho" type="xsd:string"/>
+      <element name="tipoSolicitacao" type="xsd:string"/>
+      <element name="tipoDocumento" type="xsd:string"/>
+      <element name="numeroDocumento" type="xsd:string"/>
+      <element name="caraterSolicitacao" type="xsd:string"/>
+      <element name="dataPrevistaAtendimento" type="xsd:string"/>
+      <element name="indicacaoAcidente" type="xsd:string"/>
+      <element name="tipoInternacao" type="xsd:string"/>
+      <element name="regimeInternacao" type="xsd:string"/>
+      <element name="qtdeDiarias" type="xsd:integer"/>
+      <element name="flgUsoVideo" type="xsd:string"/>
+      <element name="cid10" type="xsd:string"/>
+      <element name="codigoConselho" type="xsd:string"/>
+      <element name="siglaUfConselho" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="validarDadosAtendimentoResponse">
+    <complexType>
+     <sequence>
+      <element name="validarDadosAtendimentoReturn" type="tns1:RetornoAutorizador"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="validaDadosServico">
+    <complexType>
+     <sequence>
+      <element name="codigoBeneficiario" type="xsd:string"/>
+      <element name="codigoPrestador" type="xsd:string"/>
+      <element name="tipoSolicitacao" type="xsd:string"/>
+      <element name="caraterSolicitacao" type="xsd:string"/>
+      <element name="dataPrevistaAtendimento" type="xsd:string"/>
+      <element name="indicacaoAcidente" type="xsd:string"/>
+      <element name="tipoInternacao" type="xsd:string"/>
+      <element name="regimeInternacao" type="xsd:string"/>
+      <element name="qtdeDiarias" type="xsd:integer"/>
+      <element name="flgUsoVideo" type="xsd:string"/>
+      <element name="cid10" type="xsd:string"/>
+      <element name="numeroConselho" type="xsd:string"/>
+      <element name="codigoConselho" type="xsd:string"/>
+      <element name="siglaUfConselho" type="xsd:string"/>
+      <element maxOccurs="unbounded" name="servicos" type="tns1:ServicoAutorizador"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="validaDadosServicoResponse">
+    <complexType>
+     <sequence>
+      <element name="validaDadosServicoReturn" type="tns1:RetornoServicoAutorizador"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="ArrayOf_tns1_ServicoAutorizador">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="tns1:ServicoAutorizador"/>
+    </sequence>
+   </complexType>
+   <complexType name="ArrayOf_tns1_RetornoItemAutorizador">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="tns1:RetornoItemAutorizador"/>
+    </sequence>
+   </complexType>
+   <element name="processaSolicitacao">
+    <complexType>
+     <sequence>
+      <element name="codigoBeneficiario" type="xsd:string"/>
+      <element name="codigoPrestador" type="xsd:string"/>
+      <element name="nomeContratado" type="xsd:string"/>
+      <element name="codigoConselho" type="xsd:string"/>
+      <element name="numeroConselho" type="xsd:string"/>
+      <element name="siglaUfConselho" type="xsd:string"/>
+      <element name="codigoCBOS" type="xsd:string"/>
+      <element name="nomeSolicitante" type="xsd:string"/>
+      <element name="tipoSolicitacao" type="xsd:string"/>
+      <element name="tipoDocumento" type="xsd:string"/>
+      <element name="numeroDocumento" type="xsd:string"/>
+      <element name="dataPrevistaAtendimento" type="xsd:string"/>
+      <element name="caraterSolicitacao" type="xsd:string"/>
+      <element name="indicacaoAcidente" type="xsd:string"/>
+      <element name="cid10" type="xsd:string"/>
+      <element maxOccurs="unbounded" name="servicos" type="tns1:ServicoAutorizador"/>
+      <element name="numeroProtocolo" type="xsd:string"/>
+      <element name="tipoInternacao" type="xsd:string"/>
+      <element name="regimeInternacao" type="xsd:string"/>
+      <element name="qtdeDiarias" type="xsd:integer"/>
+      <element name="indicacaoClinica" type="xsd:string"/>
+      <element name="flgUsoVideo" type="xsd:string"/>
+      <element name="tipoDoenca" type="xsd:string"/>
+      <element name="tempoDoenca" type="xsd:integer"/>
+      <element name="tipoTempoDoenca" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="processaSolicitacaoResponse">
+    <complexType>
+     <sequence>
+      <element name="processaSolicitacaoReturn" type="tns1:RetornoSolicitacaoAutorizador"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="processaSolicitacaoAnaliseTecnica">
+    <complexType>
+     <sequence>
+      <element name="codigoBeneficiario" type="xsd:string"/>
+      <element name="codigoPrestador" type="xsd:string"/>
+      <element name="nomeContratado" type="xsd:string"/>
+      <element name="codigoConselho" type="xsd:string"/>
+      <element name="numeroConselho" type="xsd:string"/>
+      <element name="siglaUfConselho" type="xsd:string"/>
+      <element name="codigoCBOS" type="xsd:string"/>
+      <element name="nomeSolicitante" type="xsd:string"/>
+      <element name="tipoSolicitacao" type="xsd:string"/>
+      <element name="tipoDocumento" type="xsd:string"/>
+      <element name="numeroDocumento" type="xsd:string"/>
+      <element name="dataPrevistaAtendimento" type="xsd:string"/>
+      <element name="caraterSolicitacao" type="xsd:string"/>
+      <element name="indicacaoAcidente" type="xsd:string"/>
+      <element name="cid10" type="xsd:string"/>
+      <element maxOccurs="unbounded" name="servicos" type="tns1:ServicoAutorizador"/>
+      <element name="emailRecepcao" type="xsd:string"/>
+      <element name="dddTelefone" type="xsd:string"/>
+      <element name="telefone" type="xsd:string"/>
+      <element name="ramalTelefone" type="xsd:string"/>
+      <element name="dddFax" type="xsd:string"/>
+      <element name="fax" type="xsd:string"/>
+      <element name="ramalFax" type="xsd:string"/>
+      <element name="nomeContato" type="xsd:string"/>
+      <element maxOccurs="unbounded" name="idsAnexo" type="xsd:integer"/>
+      <element name="flgUsoVideo" type="xsd:string"/>
+      <element name="justificativa" type="xsd:string"/>
+      <element name="numeroProtocolo" type="xsd:string"/>
+      <element name="tipoInternacao" type="xsd:string"/>
+      <element name="regimeInternacao" type="xsd:string"/>
+      <element name="qtdeDiarias" type="xsd:integer"/>
+      <element name="indicacaoClinica" type="xsd:string"/>
+      <element name="tipoDoenca" type="xsd:string"/>
+      <element name="tempoDoenca" type="xsd:integer"/>
+      <element name="tipoTempoDoenca" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="processaSolicitacaoAnaliseTecnicaResponse">
+    <complexType>
+     <sequence>
+      <element name="processaSolicitacaoAnaliseTecnicaReturn" type="tns1:RetornoSolicitacaoAutorizador"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="excluiAnexo">
+    <complexType>
+     <sequence>
+      <element name="codigoArquivoSAS" type="xsd:integer"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="excluiAnexoResponse">
+    <complexType/>
+   </element>
+   <element name="buscaListaConselhoProfissional">
+    <complexType/>
+   </element>
+   <element name="buscaListaConselhoProfissionalResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="buscaListaConselhoProfissionalReturn" type="tns1:ListObjectTO"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="buscaListaCBOS">
+    <complexType/>
+   </element>
+   <element name="buscaListaCBOSResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="buscaListaCBOSReturn" type="tns1:ListObjectTO"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="buscaListaTipoSolicitacao">
+    <complexType/>
+   </element>
+   <element name="buscaListaTipoSolicitacaoResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="buscaListaTipoSolicitacaoReturn" type="tns1:ListObjectTO"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="buscaListaTipoInternacao">
+    <complexType/>
+   </element>
+   <element name="buscaListaTipoInternacaoResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="buscaListaTipoInternacaoReturn" type="tns1:ListObjectTO"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="buscaListaTipoDoenca">
+    <complexType/>
+   </element>
+   <element name="buscaListaTipoDoencaResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="buscaListaTipoDoencaReturn" type="tns1:ListObjectTO"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="buscaListaTipoTempoDoenca">
+    <complexType/>
+   </element>
+   <element name="buscaListaTipoTempoDoencaResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="buscaListaTipoTempoDoencaReturn" type="tns1:ListObjectTO"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="buscaListaRegimeInternacao">
+    <complexType/>
+   </element>
+   <element name="buscaListaRegimeInternacaoResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="buscaListaRegimeInternacaoReturn" type="tns1:ListObjectTO"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="buscaListaCaraterSolicitacao">
+    <complexType/>
+   </element>
+   <element name="buscaListaCaraterSolicitacaoResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="buscaListaCaraterSolicitacaoReturn" type="tns1:ListObjectTO"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="buscaListaTipoDocumento">
+    <complexType/>
+   </element>
+   <element name="buscaListaTipoDocumentoResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="buscaListaTipoDocumentoReturn" type="tns1:ListObjectTO"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="buscaListaUF">
+    <complexType/>
+   </element>
+   <element name="buscaListaUFResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="buscaListaUFReturn" type="tns1:ListObjectTO"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="buscaListaIndicacaoAcidente">
+    <complexType/>
+   </element>
+   <element name="buscaListaIndicacaoAcidenteResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="buscaListaIndicacaoAcidenteReturn" type="tns1:ListObjectTO"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="buscaServicoPorDescricao">
+    <complexType>
+     <sequence>
+      <element name="descricao" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="buscaServicoPorDescricaoResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="buscaServicoPorDescricaoReturn" type="tns1:ServicoAutorizador"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="buscarServicoPorDescricao">
+    <complexType>
+     <sequence>
+      <element name="descricao" type="xsd:string"/>
+      <element name="codigoBeneficiario" type="xsd:string"/>
+      <element name="codigoPrestador" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="buscarServicoPorDescricaoResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="buscarServicoPorDescricaoReturn" type="tns1:ServicoAutorizador"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="buscaServicoPorCodigo">
+    <complexType>
+     <sequence>
+      <element name="codigo" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="buscaServicoPorCodigoResponse">
+    <complexType>
+     <sequence>
+      <element name="buscaServicoPorCodigoReturn" type="tns1:ServicoAutorizador"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="buscarServicoPorCodigo">
+    <complexType>
+     <sequence>
+      <element name="codigo" type="xsd:string"/>
+      <element name="codigoBeneficiario" type="xsd:string"/>
+      <element name="codigoPrestador" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="buscarServicoPorCodigoResponse">
+    <complexType>
+     <sequence>
+      <element name="buscarServicoPorCodigoReturn" type="tns1:ServicoAutorizador"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="prepararDadosSolicitante">
+    <complexType/>
+   </element>
+   <element name="prepararDadosSolicitanteResponse">
+    <complexType>
+     <sequence>
+      <element name="prepararDadosSolicitanteReturn" type="tns1:CargaDadosSolicitante"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="ArrayOf_tns1_ListObjectTO">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="tns1:ListObjectTO"/>
+    </sequence>
+   </complexType>
+   <element name="prepararDadosAmbulatorial">
+    <complexType/>
+   </element>
+   <element name="prepararDadosAmbulatorialResponse">
+    <complexType>
+     <sequence>
+      <element name="prepararDadosAmbulatorialReturn" type="tns1:CargaDadosAmbulatorial"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="prepararDadosInternacao">
+    <complexType/>
+   </element>
+   <element name="prepararDadosInternacaoResponse">
+    <complexType>
+     <sequence>
+      <element name="prepararDadosInternacaoReturn" type="tns1:CargaDadosInternacao"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="revalidarDadosServico">
+    <complexType>
+     <sequence>
+      <element name="numVpp" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="revalidarDadosServicoResponse">
+    <complexType>
+     <sequence>
+      <element name="revalidarDadosServicoReturn" type="tns1:RetornoAutorizadorRevalidacaoServico"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://to.autorizador.portalws.susis.sulamerica.com.br" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://autorizador.portalws.susis.sulamerica.com.br"/>
+   <complexType name="RetornoAutorizador">
+    <sequence>
+     <element name="codRetorno" nillable="true" type="xsd:string"/>
+     <element name="descricaoStatus" nillable="true" type="xsd:string"/>
+     <element name="mensagem" nillable="true" type="xsd:string"/>
+     <element name="mensagens" nillable="true" type="impl:ArrayOf_xsd_string"/>
+     <element name="nomeRegra" nillable="true" type="xsd:string"/>
+     <element name="status" nillable="true" type="xsd:int"/>
+    </sequence>
+   </complexType>
+   <complexType name="ServicoAutorizador">
+    <sequence>
+     <element name="codigoServico" nillable="true" type="xsd:string"/>
+     <element name="codigoServicoOrigem" nillable="true" type="xsd:string"/>
+     <element name="descricaoServico" nillable="true" type="xsd:string"/>
+     <element name="descricaoServicoOrigem" nillable="true" type="xsd:string"/>
+     <element name="qtde" nillable="true" type="xsd:int"/>
+    </sequence>
+   </complexType>
+   <complexType name="RetornoItemAutorizador">
+    <complexContent>
+     <extension base="tns1:RetornoAutorizador">
+      <sequence>
+       <element name="codigoServico" nillable="true" type="xsd:string"/>
+       <element name="descricaoServico" nillable="true" type="xsd:string"/>
+       <element name="linkDocumentoCentralAjuda" nillable="true" type="xsd:string"/>
+       <element name="pacotes" nillable="true" type="impl:ArrayOf_tns1_ServicoAutorizador"/>
+       <element name="qtde" nillable="true" type="xsd:int"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="RetornoServicoAutorizador">
+    <complexContent>
+     <extension base="tns1:RetornoAutorizador">
+      <sequence>
+       <element name="retornosItemAutorizador" nillable="true" type="impl:ArrayOf_tns1_RetornoItemAutorizador"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="RetornoSolicitacaoAutorizador">
+    <complexContent>
+     <extension base="tns1:RetornoAutorizador">
+      <sequence>
+       <element name="caraterSolicitacao" nillable="true" type="xsd:string"/>
+       <element name="itensAnaliseTecnica" nillable="true" type="impl:ArrayOf_tns1_RetornoItemAutorizador"/>
+       <element name="itensNEV" nillable="true" type="impl:ArrayOf_tns1_RetornoItemAutorizador"/>
+       <element name="itensRecusados" nillable="true" type="impl:ArrayOf_tns1_RetornoItemAutorizador"/>
+       <element name="itensValidados" nillable="true" type="impl:ArrayOf_tns1_RetornoItemAutorizador"/>
+       <element name="numeroAP" nillable="true" type="xsd:string"/>
+       <element name="numeroProtocolo" nillable="true" type="xsd:string"/>
+       <element name="origemSIC" type="xsd:boolean"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="ListObjectTO">
+    <sequence>
+     <element name="label" nillable="true" type="xsd:string"/>
+     <element name="value" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="CargaDadosSolicitante">
+    <sequence>
+     <element name="cbos" nillable="true" type="impl:ArrayOf_tns1_ListObjectTO"/>
+     <element name="conselhos" nillable="true" type="impl:ArrayOf_tns1_ListObjectTO"/>
+     <element name="tiposDocumento" nillable="true" type="impl:ArrayOf_tns1_ListObjectTO"/>
+     <element name="tiposSolicitacao" nillable="true" type="impl:ArrayOf_tns1_ListObjectTO"/>
+     <element name="ufs" nillable="true" type="impl:ArrayOf_tns1_ListObjectTO"/>
+    </sequence>
+   </complexType>
+   <complexType name="CargaDadosAmbulatorial">
+    <sequence>
+     <element name="caratersSolicitacao" nillable="true" type="impl:ArrayOf_tns1_ListObjectTO"/>
+     <element name="indicacoesAcidente" nillable="true" type="impl:ArrayOf_tns1_ListObjectTO"/>
+    </sequence>
+   </complexType>
+   <complexType name="CargaDadosInternacao">
+    <sequence>
+     <element name="caratersSolicitacao" nillable="true" type="impl:ArrayOf_tns1_ListObjectTO"/>
+     <element name="indicacoesAcidente" nillable="true" type="impl:ArrayOf_tns1_ListObjectTO"/>
+     <element name="regimesInternacao" nillable="true" type="impl:ArrayOf_tns1_ListObjectTO"/>
+     <element name="tiposDoenca" nillable="true" type="impl:ArrayOf_tns1_ListObjectTO"/>
+     <element name="tiposInternacao" nillable="true" type="impl:ArrayOf_tns1_ListObjectTO"/>
+     <element name="tiposTempoDoenca" nillable="true" type="impl:ArrayOf_tns1_ListObjectTO"/>
+    </sequence>
+   </complexType>
+   <complexType name="RetornoAutorizadorRevalidacaoServico">
+    <complexContent>
+     <extension base="tns1:RetornoAutorizador">
+      <sequence>
+       <element name="flgRevalidada" nillable="true" type="xsd:string"/>
+       <element name="numVPP" nillable="true" type="xsd:string"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="buscaListaTipoSolicitacaoRequest">
+
+      <wsdl:part element="impl:buscaListaTipoSolicitacao" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="processaSolicitacaoAnaliseTecnicaRequest">
+
+      <wsdl:part element="impl:processaSolicitacaoAnaliseTecnica" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="buscaListaConselhoProfissionalResponse">
+
+      <wsdl:part element="impl:buscaListaConselhoProfissionalResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="validaDadosServicoResponse">
+
+      <wsdl:part element="impl:validaDadosServicoResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="excluiAnexoResponse">
+
+      <wsdl:part element="impl:excluiAnexoResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="validaDadosServicoRequest">
+
+      <wsdl:part element="impl:validaDadosServico" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="buscaServicoPorCodigoRequest">
+
+      <wsdl:part element="impl:buscaServicoPorCodigo" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="buscaServicoPorCodigoResponse">
+
+      <wsdl:part element="impl:buscaServicoPorCodigoResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="prepararDadosAmbulatorialRequest">
+
+      <wsdl:part element="impl:prepararDadosAmbulatorial" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="buscarServicoPorDescricaoRequest">
+
+      <wsdl:part element="impl:buscarServicoPorDescricao" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="buscarServicoPorDescricaoResponse">
+
+      <wsdl:part element="impl:buscarServicoPorDescricaoResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="validaDadosAtendimentoRequest">
+
+      <wsdl:part element="impl:validaDadosAtendimento" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="processaSolicitacaoRequest">
+
+      <wsdl:part element="impl:processaSolicitacao" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="buscarServicoPorCodigoResponse">
+
+      <wsdl:part element="impl:buscarServicoPorCodigoResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="buscaListaCBOSResponse">
+
+      <wsdl:part element="impl:buscaListaCBOSResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="buscaListaTipoInternacaoResponse">
+
+      <wsdl:part element="impl:buscaListaTipoInternacaoResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="buscaListaIndicacaoAcidenteResponse">
+
+      <wsdl:part element="impl:buscaListaIndicacaoAcidenteResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="revalidarDadosServicoResponse">
+
+      <wsdl:part element="impl:revalidarDadosServicoResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="prepararDadosInternacaoResponse">
+
+      <wsdl:part element="impl:prepararDadosInternacaoResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="buscaListaRegimeInternacaoResponse">
+
+      <wsdl:part element="impl:buscaListaRegimeInternacaoResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="validarDadosAtendimentoRequest">
+
+      <wsdl:part element="impl:validarDadosAtendimento" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="buscaListaTipoDoencaRequest">
+
+      <wsdl:part element="impl:buscaListaTipoDoenca" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="prepararDadosSolicitanteResponse">
+
+      <wsdl:part element="impl:prepararDadosSolicitanteResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="buscaListaUFRequest">
+
+      <wsdl:part element="impl:buscaListaUF" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="buscaListaTipoDocumentoResponse">
+
+      <wsdl:part element="impl:buscaListaTipoDocumentoResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="validaDadosAtendimentoResponse">
+
+      <wsdl:part element="impl:validaDadosAtendimentoResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="buscaListaUFResponse">
+
+      <wsdl:part element="impl:buscaListaUFResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="excluiAnexoRequest">
+
+      <wsdl:part element="impl:excluiAnexo" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="processaSolicitacaoResponse">
+
+      <wsdl:part element="impl:processaSolicitacaoResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="buscaServicoPorDescricaoResponse">
+
+      <wsdl:part element="impl:buscaServicoPorDescricaoResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="buscaListaTipoTempoDoencaResponse">
+
+      <wsdl:part element="impl:buscaListaTipoTempoDoencaResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="prepararDadosSolicitanteRequest">
+
+      <wsdl:part element="impl:prepararDadosSolicitante" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="processaSolicitacaoAnaliseTecnicaResponse">
+
+      <wsdl:part element="impl:processaSolicitacaoAnaliseTecnicaResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="buscaListaRegimeInternacaoRequest">
+
+      <wsdl:part element="impl:buscaListaRegimeInternacao" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="buscaListaCBOSRequest">
+
+      <wsdl:part element="impl:buscaListaCBOS" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="buscaListaCaraterSolicitacaoRequest">
+
+      <wsdl:part element="impl:buscaListaCaraterSolicitacao" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="buscaListaTipoDocumentoRequest">
+
+      <wsdl:part element="impl:buscaListaTipoDocumento" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="prepararDadosAmbulatorialResponse">
+
+      <wsdl:part element="impl:prepararDadosAmbulatorialResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="buscaListaIndicacaoAcidenteRequest">
+
+      <wsdl:part element="impl:buscaListaIndicacaoAcidente" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="buscaListaTipoDoencaResponse">
+
+      <wsdl:part element="impl:buscaListaTipoDoencaResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="buscaListaTipoTempoDoencaRequest">
+
+      <wsdl:part element="impl:buscaListaTipoTempoDoenca" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="buscaServicoPorDescricaoRequest">
+
+      <wsdl:part element="impl:buscaServicoPorDescricao" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="buscaListaCaraterSolicitacaoResponse">
+
+      <wsdl:part element="impl:buscaListaCaraterSolicitacaoResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="buscaListaConselhoProfissionalRequest">
+
+      <wsdl:part element="impl:buscaListaConselhoProfissional" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="buscarServicoPorCodigoRequest">
+
+      <wsdl:part element="impl:buscarServicoPorCodigo" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="revalidarDadosServicoRequest">
+
+      <wsdl:part element="impl:revalidarDadosServico" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="validarDadosAtendimentoResponse">
+
+      <wsdl:part element="impl:validarDadosAtendimentoResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="prepararDadosInternacaoRequest">
+
+      <wsdl:part element="impl:prepararDadosInternacao" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="buscaListaTipoSolicitacaoResponse">
+
+      <wsdl:part element="impl:buscaListaTipoSolicitacaoResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="buscaListaTipoInternacaoRequest">
+
+      <wsdl:part element="impl:buscaListaTipoInternacao" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="AtendimentoAutorizador">
+
+      <wsdl:operation name="validaDadosAtendimento">
+
+         <wsdl:input message="impl:validaDadosAtendimentoRequest" name="validaDadosAtendimentoRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:validaDadosAtendimentoResponse" name="validaDadosAtendimentoResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="validarDadosAtendimento">
+
+         <wsdl:input message="impl:validarDadosAtendimentoRequest" name="validarDadosAtendimentoRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:validarDadosAtendimentoResponse" name="validarDadosAtendimentoResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="validaDadosServico">
+
+         <wsdl:input message="impl:validaDadosServicoRequest" name="validaDadosServicoRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:validaDadosServicoResponse" name="validaDadosServicoResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="processaSolicitacao">
+
+         <wsdl:input message="impl:processaSolicitacaoRequest" name="processaSolicitacaoRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:processaSolicitacaoResponse" name="processaSolicitacaoResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="processaSolicitacaoAnaliseTecnica">
+
+         <wsdl:input message="impl:processaSolicitacaoAnaliseTecnicaRequest" name="processaSolicitacaoAnaliseTecnicaRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:processaSolicitacaoAnaliseTecnicaResponse" name="processaSolicitacaoAnaliseTecnicaResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="excluiAnexo">
+
+         <wsdl:input message="impl:excluiAnexoRequest" name="excluiAnexoRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:excluiAnexoResponse" name="excluiAnexoResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="buscaListaConselhoProfissional">
+
+         <wsdl:input message="impl:buscaListaConselhoProfissionalRequest" name="buscaListaConselhoProfissionalRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:buscaListaConselhoProfissionalResponse" name="buscaListaConselhoProfissionalResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="buscaListaCBOS">
+
+         <wsdl:input message="impl:buscaListaCBOSRequest" name="buscaListaCBOSRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:buscaListaCBOSResponse" name="buscaListaCBOSResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="buscaListaTipoSolicitacao">
+
+         <wsdl:input message="impl:buscaListaTipoSolicitacaoRequest" name="buscaListaTipoSolicitacaoRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:buscaListaTipoSolicitacaoResponse" name="buscaListaTipoSolicitacaoResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="buscaListaTipoInternacao">
+
+         <wsdl:input message="impl:buscaListaTipoInternacaoRequest" name="buscaListaTipoInternacaoRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:buscaListaTipoInternacaoResponse" name="buscaListaTipoInternacaoResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="buscaListaTipoDoenca">
+
+         <wsdl:input message="impl:buscaListaTipoDoencaRequest" name="buscaListaTipoDoencaRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:buscaListaTipoDoencaResponse" name="buscaListaTipoDoencaResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="buscaListaTipoTempoDoenca">
+
+         <wsdl:input message="impl:buscaListaTipoTempoDoencaRequest" name="buscaListaTipoTempoDoencaRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:buscaListaTipoTempoDoencaResponse" name="buscaListaTipoTempoDoencaResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="buscaListaRegimeInternacao">
+
+         <wsdl:input message="impl:buscaListaRegimeInternacaoRequest" name="buscaListaRegimeInternacaoRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:buscaListaRegimeInternacaoResponse" name="buscaListaRegimeInternacaoResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="buscaListaCaraterSolicitacao">
+
+         <wsdl:input message="impl:buscaListaCaraterSolicitacaoRequest" name="buscaListaCaraterSolicitacaoRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:buscaListaCaraterSolicitacaoResponse" name="buscaListaCaraterSolicitacaoResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="buscaListaTipoDocumento">
+
+         <wsdl:input message="impl:buscaListaTipoDocumentoRequest" name="buscaListaTipoDocumentoRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:buscaListaTipoDocumentoResponse" name="buscaListaTipoDocumentoResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="buscaListaUF">
+
+         <wsdl:input message="impl:buscaListaUFRequest" name="buscaListaUFRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:buscaListaUFResponse" name="buscaListaUFResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="buscaListaIndicacaoAcidente">
+
+         <wsdl:input message="impl:buscaListaIndicacaoAcidenteRequest" name="buscaListaIndicacaoAcidenteRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:buscaListaIndicacaoAcidenteResponse" name="buscaListaIndicacaoAcidenteResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="buscaServicoPorDescricao">
+
+         <wsdl:input message="impl:buscaServicoPorDescricaoRequest" name="buscaServicoPorDescricaoRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:buscaServicoPorDescricaoResponse" name="buscaServicoPorDescricaoResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="buscarServicoPorDescricao">
+
+         <wsdl:input message="impl:buscarServicoPorDescricaoRequest" name="buscarServicoPorDescricaoRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:buscarServicoPorDescricaoResponse" name="buscarServicoPorDescricaoResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="buscaServicoPorCodigo">
+
+         <wsdl:input message="impl:buscaServicoPorCodigoRequest" name="buscaServicoPorCodigoRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:buscaServicoPorCodigoResponse" name="buscaServicoPorCodigoResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="buscarServicoPorCodigo">
+
+         <wsdl:input message="impl:buscarServicoPorCodigoRequest" name="buscarServicoPorCodigoRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:buscarServicoPorCodigoResponse" name="buscarServicoPorCodigoResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="prepararDadosSolicitante">
+
+         <wsdl:input message="impl:prepararDadosSolicitanteRequest" name="prepararDadosSolicitanteRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:prepararDadosSolicitanteResponse" name="prepararDadosSolicitanteResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="prepararDadosAmbulatorial">
+
+         <wsdl:input message="impl:prepararDadosAmbulatorialRequest" name="prepararDadosAmbulatorialRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:prepararDadosAmbulatorialResponse" name="prepararDadosAmbulatorialResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="prepararDadosInternacao">
+
+         <wsdl:input message="impl:prepararDadosInternacaoRequest" name="prepararDadosInternacaoRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:prepararDadosInternacaoResponse" name="prepararDadosInternacaoResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="revalidarDadosServico">
+
+         <wsdl:input message="impl:revalidarDadosServicoRequest" name="revalidarDadosServicoRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:revalidarDadosServicoResponse" name="revalidarDadosServicoResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="AtendimentoAutorizadorSoapBinding" type="impl:AtendimentoAutorizador">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="validaDadosAtendimento">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="validaDadosAtendimentoRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="validaDadosAtendimentoResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="validarDadosAtendimento">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="validarDadosAtendimentoRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="validarDadosAtendimentoResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="validaDadosServico">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="validaDadosServicoRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="validaDadosServicoResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="processaSolicitacao">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="processaSolicitacaoRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="processaSolicitacaoResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="processaSolicitacaoAnaliseTecnica">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="processaSolicitacaoAnaliseTecnicaRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="processaSolicitacaoAnaliseTecnicaResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="excluiAnexo">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="excluiAnexoRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="excluiAnexoResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="buscaListaConselhoProfissional">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="buscaListaConselhoProfissionalRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="buscaListaConselhoProfissionalResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="buscaListaCBOS">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="buscaListaCBOSRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="buscaListaCBOSResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="buscaListaTipoSolicitacao">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="buscaListaTipoSolicitacaoRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="buscaListaTipoSolicitacaoResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="buscaListaTipoInternacao">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="buscaListaTipoInternacaoRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="buscaListaTipoInternacaoResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="buscaListaTipoDoenca">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="buscaListaTipoDoencaRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="buscaListaTipoDoencaResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="buscaListaTipoTempoDoenca">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="buscaListaTipoTempoDoencaRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="buscaListaTipoTempoDoencaResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="buscaListaRegimeInternacao">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="buscaListaRegimeInternacaoRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="buscaListaRegimeInternacaoResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="buscaListaCaraterSolicitacao">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="buscaListaCaraterSolicitacaoRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="buscaListaCaraterSolicitacaoResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="buscaListaTipoDocumento">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="buscaListaTipoDocumentoRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="buscaListaTipoDocumentoResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="buscaListaUF">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="buscaListaUFRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="buscaListaUFResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="buscaListaIndicacaoAcidente">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="buscaListaIndicacaoAcidenteRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="buscaListaIndicacaoAcidenteResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="buscaServicoPorDescricao">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="buscaServicoPorDescricaoRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="buscaServicoPorDescricaoResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="buscarServicoPorDescricao">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="buscarServicoPorDescricaoRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="buscarServicoPorDescricaoResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="buscaServicoPorCodigo">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="buscaServicoPorCodigoRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="buscaServicoPorCodigoResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="buscarServicoPorCodigo">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="buscarServicoPorCodigoRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="buscarServicoPorCodigoResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="prepararDadosSolicitante">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="prepararDadosSolicitanteRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="prepararDadosSolicitanteResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="prepararDadosAmbulatorial">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="prepararDadosAmbulatorialRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="prepararDadosAmbulatorialResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="prepararDadosInternacao">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="prepararDadosInternacaoRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="prepararDadosInternacaoResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="revalidarDadosServico">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="revalidarDadosServicoRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="revalidarDadosServicoResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="AtendimentoAutorizadorService">
+
+      <wsdl:port binding="impl:AtendimentoAutorizadorSoapBinding" name="AtendimentoAutorizador">
+
+         <wsdlsoap:address location="http://saudeh.sulamerica.br/portalws/services/AtendimentoAutorizador"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

@@ -1,0 +1,96 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:fn="http://java.sun.com/jstl/functions"
+	>
+<h:head>
+	<link href="../css/style.css" rel="stylesheet" type="text/css" />
+	<style>
+.ui-messages-error-summary {
+	font-size: 12px;
+}
+
+.ui-messages {
+	width: 300px;
+	position: relative;
+	left: -50px;
+	top: -10px;
+}
+</style>
+	<link rel="stylesheet" href="../css/uniform.default.css" media="screen" />
+	<script
+		src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+	<script src="js/jquery.uniform.js"></script>
+	<title>Login</title>
+	<script>
+		$(function() {
+			$("select").uniform();
+			$("input").uniform();
+		});
+		
+		
+	</script>
+</h:head>
+<h:body onload="selecteds()">
+<h:form id="form1">
+<p:inputText id="selecteds" name="selecteds" value="#{voo.selectedAssentos}" style="display:none;" />
+<div class="quadro" style="width:530px;padding:10px;">
+		<div style="float:right;">
+			<p:commandLink id="sairBtn" actionListener="#{clientes.sair}">
+	        	Sair
+	    	</p:commandLink>
+		</div>
+		<div style="float:left;">
+			<p:commandLink id="menuBtn" action="menuUsuario.jsf">
+	        	Menu
+	    	</p:commandLink>
+		</div>
+		<div class="form" style="width:420px;">
+			<h3>Reserva Realizadas</h3>
+			<p:dataTable id="listaTrechos" var="trecho" value="#{voo.voo.trechos}"
+				rowKey="#{voo}" selectionMode="single" style="width:400px;">
+				<p:column headerText="Trechos">
+					<h:outputText value="#{trecho.nomeTrecho1} - #{trecho.nomeTrecho2}" />
+				</p:column>
+				<p:column headerText="Valor">
+					R$ <h:outputText value="#{trecho.preco}" />
+				</p:column>
+			</p:dataTable>
+			<br /><br />
+			
+			<p:dataTable var="selecionados" value="#{voo.assentoSelecionados}" style="width:400px;">
+				<p:column headerText="Assento Escolhidos">
+					<h:outputText value="assento #{selecionados.id}" />
+				</p:column>
+				<p:column headerText="Tipo">
+					<h:outputText value="#{selecionados.tipo}"/>
+				</p:column>
+			</p:dataTable>
+			<br />
+			<b><h:outputText value="Multa: #{voo.multa}" id="multa" /></b>
+			<br />			
+			<b><h:outputText value="Valor Total: #{voo.valorTotal}" id="precoTotal" /></b>
+			<br />
+			<br />
+       		<c:if test="${btns}">
+ 				<p:commandButton value="Finalizar" action="#{voo.finalizar}"
+           			ajax="false" />
+	 			<p:commandButton value="Alterar" action="#{voo.alterar}"
+	           		ajax="false" />
+				<p:commandButton value="Cancelar Reserva" action="#{voo.cancelar}"
+	           		ajax="false" />
+       		</c:if>
+       		<c:if test="${!btns}">
+				<script>
+					document.getElementById('titulo').textContent='Reserva Finalizada';
+				</script>
+			</c:if>
+		</div>
+
+	</div>
+</h:form>
+</h:body>
+</html>

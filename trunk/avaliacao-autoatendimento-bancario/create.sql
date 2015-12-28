@@ -1,0 +1,15 @@
+CREATE  TABLE  cliente (idcliente INT NOT NULL AUTO_INCREMENT ,nome VARCHAR(255) NULL ,cpf VARCHAR(45) NULL ,dataNascimento DATE NULL ,PRIMARY KEY (idcliente) );
+CREATE  TABLE  conta (numConta INT NOT NULL AUTO_INCREMENT ,tipoConta CHAR(1) NOT NULL ,cliente_idcliente INT NOT NULL ,saldoEmConta DOUBLE NULL ,data DATETIME NULL ,PRIMARY KEY (numConta) ,CONSTRAINT fk_conta_cliente1 FOREIGN KEY (cliente_idcliente ) REFERENCES cliente (idcliente ) ON DELETE NO ACTION ON UPDATE NO ACTION);
+CREATE  TABLE  historico_conta (id INT NOT NULL AUTO_INCREMENT, dataOperacao DATE NULL , tipoOperacao VARCHAR(45) NULL , valor DOUBLE NULL , conta_numConta INT NOT NULL , PRIMARY KEY (id) ,CONSTRAINT fk_historico_conta_conta FOREIGN KEY (conta_numConta ) REFERENCES conta (numConta ) ON DELETE NO ACTION ON UPDATE NO ACTION);
+insert into cliente(nome, cpf, dataNascimento) values ('Carlos Barbero', '22299988892', '1982-05-18');
+insert into conta(tipoConta, cliente_idcliente, saldoEmConta, data) values ('C', 1, 10000, CURDATE());
+insert into historico_conta(dataOperacao, tipoOperacao, valor, conta_numConta) values (CURDATE(), 'DEPOSITO', 10000, 1);
+insert into cliente(nome, cpf, dataNascimento) values ('Marcos Barbero', '111199988892', '1983-05-18');
+insert into conta(tipoConta, cliente_idcliente, saldoEmConta, data) values ('C', 2, 10000, CURDATE());
+insert into historico_conta(dataOperacao, tipoOperacao, valor, conta_numConta) values (CURDATE(),  'DEPOSITO', 10000, 2);
+insert into cliente(nome, cpf, dataNascimento) values ('Jose Teste', '33391918892', '1962-05-18');
+insert into conta(tipoConta, cliente_idcliente, saldoEmConta, data) values ('P', 3, 10000, CURDATE());
+insert into historico_conta(dataOperacao, tipoOperacao, valor, conta_numConta) values (CURDATE(),  'DEPOSITO', 10000, 3);
+insert into cliente(nome, cpf, dataNascimento) values ('Pedro Jose da Silva', '33391918882', '1962-06-18');
+insert into conta(tipoConta, cliente_idcliente, saldoEmConta, data) values ('P', 4, 10000, CURDATE());
+insert into historico_conta(dataOperacao, tipoOperacao, valor, conta_numConta) values (CURDATE(),  'DEPOSITO', 10000, 4);

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>fiap-estoque</artifactId>
+		<groupId>br.com.fiap.estoque</groupId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>fiap-estoque-bean</artifactId>
+	<packaging>ejb</packaging>
+
+	<name>fiap-estoque-bean</name>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<dependencies>
+
+
+		<!-- Dependencia deve ter essa ordem para que o Junit entenda o tomee-embedded -->
+		<dependency>
+			<groupId>org.apache.openejb</groupId>
+			<artifactId>tomee-embedded</artifactId>
+			<version>1.5.2</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-api</artifactId>
+			<version>6.0</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.hibernate.javax.persistence</groupId>
+			<artifactId>hibernate-jpa-2.0-api</artifactId>
+			<version>1.0.1.Final</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>4.2.7.Final</version>
+		</dependency>
+		
+		<dependency>
+	<groupId>org.hibernate</groupId>
+	<artifactId>hibernate-core</artifactId>
+	<version>4.2.7.Final</version>
+</dependency>
+            
+
+
+
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-ejb-plugin</artifactId>
+				<version>2.3</version>
+				<configuration>
+					<ejbVersion>3.1</ejbVersion>
+					<generateClient>true</generateClient>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.openejb.maven</groupId>
+				<artifactId>tomee-maven-plugin</artifactId>
+				<configuration>
+					<tomeeVersion>1.5.0</tomeeVersion>
+					<tomeeClassifier>plus</tomeeClassifier>
+					<debug>false</debug>
+					<debugPort>5005</debugPort>
+					<tomeeHttpPort>8081</tomeeHttpPort>
+					<args>-Dfoo=bar</args>
+					<apps>
+						<app>br.com.fiap.estoque:fiap-estoque-bean:0.0.1-SNAPSHOT:jar</app>
+					</apps>
+					<synchronization>
+						<extensions>
+							<extension>.class</extension>
+						</extensions>
+					</synchronization>
+					<reloadOnUpdate>true</reloadOnUpdate>
+					<libs>
+						<lib>org.hibernate:hibernate-entitymanager:4.2.7.Final:jar</lib>
+						<lib>org.hibernate:hibernate-core:4.2.7.Final:jar</lib>
+						<lib>org.jboss.logging:jboss-logging:3.1.0.CR1:jar</lib>
+						<lib>dom4j:dom4j:1.6.1:jar</lib>
+						<lib>org.hibernate:hibernate-annotations:3.5.6-Final:jar</lib>
+						<lib>org.hibernate.common:hibernate-commons-annotations:4.0.4.Final:jar</lib>
+					</libs>
+
+				</configuration>
+			</plugin>
+
+		</plugins>
+	</build>
+
+</project>

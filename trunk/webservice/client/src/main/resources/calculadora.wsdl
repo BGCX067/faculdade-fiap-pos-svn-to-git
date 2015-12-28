@@ -1,0 +1,52 @@
+<wsdl:definitions name="CalculadoraService" targetNamespace="http://ws.carlos.com.br/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://ws.carlos.com.br/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+<xs:schema elementFormDefault="unqualified" targetNamespace="http://ws.carlos.com.br/" version="1.0" xmlns:tns="http://ws.carlos.com.br/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:element name="somar" type="tns:somar"/>
+<xs:element name="somarResponse" type="tns:somarResponse"/>
+<xs:complexType name="somar">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int"/>
+<xs:element name="arg1" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="somarResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="somar">
+    <wsdl:part element="tns:somar" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="somarResponse">
+    <wsdl:part element="tns:somarResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="Calculadora">
+    <wsdl:operation name="somar">
+      <wsdl:input message="tns:somar" name="somar">
+    </wsdl:input>
+      <wsdl:output message="tns:somarResponse" name="somarResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CalculadoraServiceSoapBinding" type="tns:Calculadora">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="somar">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="somar">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="somarResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CalculadoraService">
+    <wsdl:port binding="tns:CalculadoraServiceSoapBinding" name="CalculadoraPort">
+      <soap:address location="http://localhost:8181/Calculadora"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

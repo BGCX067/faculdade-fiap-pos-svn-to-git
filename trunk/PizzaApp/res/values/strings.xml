@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Pizza</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="entrega">Entrega</string>
+    <string name="levar">Levar</string>
+    <string name="pizza">Pizza</string>
+    <string name="sanduiche">Sanduiche</string>
+    <string name="drinks">Drinks</string>
+    <string name="pasta">Pasta</string>
+    <string name="bordas">Bordas</string>
+    <string name="sobremesa">Sobremesa</string>
+    <string name="cont">Bordas</string>
+    <string name="tipo">Sobremesa</string>
+    <string name="Proximo">Proximo</string>
+    <string name="Resumo">Resumo do pedido</string>
+    <string name="Finalizar">Finalizar</string>
+    
+</resources>

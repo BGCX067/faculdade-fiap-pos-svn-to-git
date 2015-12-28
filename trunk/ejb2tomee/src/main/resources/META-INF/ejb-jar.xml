@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ejb-jar version="2.1" xmlns="http://java.sun.com/xml/ns/j2ee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/ejb-jar_2_1.xsd">
+	<display-name>ejb2tomee</display-name>
+	<enterprise-beans>
+		<!-- Mensagem -->
+		<session>
+			<display-name>MensagemBean</display-name>
+			<ejb-name>MensagemBean</ejb-name>
+			<home>br.com.carlos.MensagemHome</home>
+			<remote>br.com.carlos.Mensagem</remote>
+			<ejb-class>br.com.carlos.MensagemBean</ejb-class>
+			<session-type>Stateless</session-type>
+			<transaction-type>Bean</transaction-type>
+		</session>
+	</enterprise-beans>
+</ejb-jar>

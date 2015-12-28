@@ -1,0 +1,54 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<link href="../css/style.css" rel="stylesheet" type="text/css" />
+	<style>
+.ui-messages-error-summary {
+	font-size: 12px;
+}
+
+.ui-messages {
+	width: 300px;
+	position: relative;
+	left: -50px;
+	top: -10px;
+}
+.height{
+	height:400px;
+}
+</style>
+	<link rel="stylesheet" href="../css/uniform.default.css" media="screen" />
+	<script
+		src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+	<script src="js/jquery.uniform.js"></script>
+	<title>Login</title>
+	<script>
+		$(function() {
+			$("select").uniform();
+			$("input").uniform();
+		});
+	</script>
+</h:head>
+<h:body>
+	<div class="quadro">
+		<div style="float:right;padding:10px;">
+			<h:form>
+				<h:commandLink id="sairBtn" action="#{clientes.sair}">  
+		       		<b>Sair</b>
+		    	</h:commandLink>
+	    	</h:form>
+		</div>
+		<div class="form height">
+			<h3>Olá, <h:outputLabel for="nome" value="#{clientes.nome}" /></h3>
+			<a href="escolhaVoo.jsf">Lista de Voos</a>
+			<br />
+			<br />
+			<a href="reservasRealizadasVoos.jsf">Reservas Realizadas</a>
+		</div>
+	</div>
+</h:body>
+</html>

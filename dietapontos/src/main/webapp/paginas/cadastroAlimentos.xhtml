@@ -1,0 +1,36 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<link href="css/style.css" rel="stylesheet" type="text/css" />
+	<title>Login</title>
+</h:head>
+<h:body>
+	<div id="boxCadastro">
+		<div class="elements">
+			<div class="avatar"></div>
+			<h:form>
+				<h:inputText id="nomeAlimento" class="username"
+					value="#{cadastroAlimentosManagedBean.alimentos.nome}" />
+				<p:watermark for="nomeAlimento" value="Nome do alimento" />
+				
+				<h:inputText id="calorias" class="username"
+					value="#{cadastroAlimentosManagedBean.alimentos.calorias}" />
+				<p:watermark for="calorias" value="Calorias por gramas" />
+				<p:inputMask mask="{\d}"  />
+				<p:inputMask mask="{\D}"  />
+				<p:inputMask mask="{\\D}"  />
+				<p:inputMask mask="{\\d}"  />
+				<h:selectOneMenu value="#{cadastroAlimentosManagedBean.tipoA}">
+					<f:selectItems value="#{cadastroAlimentosManagedBean.tipoAlimento}" />
+				</h:selectOneMenu>
+				<h:commandButton value="SignUp" class="submit"
+					action="#{cadastroAlimentosManagedBean.cadastrar}" />
+			</h:form>
+		</div>
+	</div>
+</h:body>
+</html>

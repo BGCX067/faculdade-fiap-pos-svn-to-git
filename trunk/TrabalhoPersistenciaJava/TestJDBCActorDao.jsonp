@@ -1,0 +1,22 @@
+receiveJsonpData({
+"cols": [
+{"label": "method", "type": "string"},
+{"label": "Average time [s]", "type": "number"},
+{"label": "StdDev", "type": "number"},
+{"label": "GC time [s]", "type": "number"},
+{"label": "GC average [s]", "type": "number"},
+{"label": "StdDev", "type": "number"},
+{"label": "GC calls", "type": "number"},
+{"label": "benchmark rounds", "type": "number"},
+{"label": "warmup rounds", "type": "number"},
+{"label": "Total benchmark time", "type": "number"},
+{"label": "Total warmup time", "type": "number"}
+],
+"rows": [
+{"c": [{"v": "deleteActor"}, {"v": 0.1}, {"v": 0.88}, {"v": 0.12}, {"v": 0.0}, {"v": 0.0}, {"v": 46}, {"v": 100}, {"v": 0}, {"v": 9.78}, {"v": 0.0}]},
+{"c": [{"v": "selectActorByAge"}, {"v": 0.05}, {"v": 0.02}, {"v": 0.26}, {"v": 0.0}, {"v": 0.0}, {"v": 326}, {"v": 100}, {"v": 0}, {"v": 4.89}, {"v": 0.0}]},
+{"c": [{"v": "insertActor"}, {"v": 0.0}, {"v": 0.0}, {"v": 0.01}, {"v": 0.0}, {"v": 0.0}, {"v": 8}, {"v": 100}, {"v": 0}, {"v": 0.33}, {"v": 0.0}]},
+{"c": [{"v": "selectActorByMovie"}, {"v": 0.11}, {"v": 0.07}, {"v": 0.46}, {"v": 0.0}, {"v": 0.0}, {"v": 358}, {"v": 100}, {"v": 0}, {"v": 11.25}, {"v": 0.0}]},
+{"c": [{"v": "validarcreateDao"}, {"v": 0.0}, {"v": 0.0}, {"v": 0.01}, {"v": 0.0}, {"v": 0.0}, {"v": 4}, {"v": 100}, {"v": 0}, {"v": 0.21}, {"v": 0.0}]},
+{"c": [{"v": "selectActorByName"}, {"v": 0.09}, {"v": 0.01}, {"v": 0.44}, {"v": 0.0}, {"v": 0.0}, {"v": 556}, {"v": 100}, {"v": 0}, {"v": 9.35}, {"v": 0.0}]}
+]});

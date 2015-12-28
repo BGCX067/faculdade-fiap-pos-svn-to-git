@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="boleto" language="groovy" pageWidth="842" pageHeight="992" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="aa45b08a-4cf3-4bfa-9e98-de6c03aaac0a">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+	<queryString language="xPath">
+		<![CDATA[/report/data]]>
+	</queryString>
+	<field name="codigo" class="java.lang.String">
+		<fieldDescription><![CDATA[cliente/codigo]]></fieldDescription>
+	</field>
+	<field name="nome" class="java.lang.String">
+		<fieldDescription><![CDATA[cliente/nome]]></fieldDescription>
+	</field>
+	<field name="endereco" class="java.lang.String">
+		<fieldDescription><![CDATA[cliente/endereco]]></fieldDescription>
+	</field>
+	<field name="cidade" class="java.lang.String">
+		<fieldDescription><![CDATA[cliente/cidade]]></fieldDescription>
+	</field>
+	<field name="estado" class="java.lang.String">
+		<fieldDescription><![CDATA[cliente/estado]]></fieldDescription>
+	</field>
+	<field name="cnpj" class="java.lang.String">
+		<fieldDescription><![CDATA[cliente/cnpj]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="59" width="100" height="20" uuid="3f9701a0-66c1-41e8-a5f1-1632fbe4ce3b"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cliente]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="151" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="8" width="100" height="20" uuid="53884b5d-d594-4de4-89a1-0662e1278046"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Código:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="28" width="100" height="20" uuid="d99fc6df-626b-449f-bed2-164b9975b4c2"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Nome:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="47" width="100" height="20" uuid="d4b91b22-2cd3-40c0-abad-116d7fe5f9b2"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Endereço:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="68" width="100" height="20" uuid="43d7051a-0441-41f0-accd-21b18e60b6a0"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Cidade:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="88" width="100" height="20" uuid="dfd64b4d-67f0-4f5e-8e9f-dd52c2469195"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[CNPJ:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="100" y="28" width="222" height="20" uuid="3746b01f-25ab-48d6-8b18-d4a28fb5d1b8"/>
+				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="8" width="222" height="20" uuid="ad85e50e-9124-46c5-97cb-b51b540a724f"/>
+				<textFieldExpression><![CDATA[$F{codigo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="48" width="222" height="20" uuid="82e8c5e5-e202-47f5-a8c4-b400e94f6a7e"/>
+				<textFieldExpression><![CDATA[$F{endereco}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="68" width="222" height="20" uuid="fda84b62-e90d-4f43-8c21-d1f518d4960a"/>
+				<textFieldExpression><![CDATA[$F{cidade}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="88" width="222" height="20" uuid="1aaca87f-acbc-486d-a5d8-f256229a7464"/>
+				<textFieldExpression><![CDATA[$F{cnpj}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="112" width="291" height="20" uuid="7e3cf374-43fd-4af4-a76b-11c9b38de6ec"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Notas Fiscais de Serviços]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="130" width="79" height="16" uuid="620d9902-e3ec-4563-9256-a4c5b6455ace"/>
+				<text><![CDATA[Número]]></text>
+			</staticText>
+			<line>
+				<reportElement x="1" y="1" width="801" height="1" uuid="1e2b9a55-eaea-4789-b777-185f6c768771"/>
+			</line>
+			<line>
+				<reportElement x="1" y="107" width="801" height="1" uuid="faddfab7-2401-4c54-97b7-94a33670a3a6"/>
+			</line>
+			<staticText>
+				<reportElement x="90" y="134" width="100" height="16" uuid="e0b73f1a-6f93-41c3-bd25-c33901edc064"/>
+				<text><![CDATA[Discriminação]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="597" y="134" width="100" height="16" uuid="2c76d474-7015-429e-8252-fd4ee00926dc"/>
+				<text><![CDATA[Valor]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="400" y="134" width="100" height="16" uuid="eda0c2d0-ae1b-455a-a107-6a37d7518b51"/>
+				<text><![CDATA[Data]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="202" splitType="Stretch">
+			<subreport runToBottom="false">
+				<reportElement x="0" y="3" width="200" height="100" uuid="29a94b65-2aff-439a-9d79-be86208ed2aa"/>
+				<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JRXmlDataSource)
+    $P{REPORT_DATA_SOURCE}).dataSource("/report/data/notasfiscaisservico/nota")]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "servicos.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement x="0" y="112" width="200" height="82" uuid="b55a1df1-a26d-40e2-8cdd-40b00ab6d46f"/>
+				<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JRXmlDataSource)
+    $P{REPORT_DATA_SOURCE}).dataSource("/report/data/boleto")]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "cobranca.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+</jasperReport>

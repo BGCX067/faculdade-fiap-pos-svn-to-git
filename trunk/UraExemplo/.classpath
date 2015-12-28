@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+	<classpathentry kind="lib" path="lib/activation-1.1.jar"/>
+	<classpathentry kind="lib" path="lib/commons-io-2.4.jar"/>
+	<classpathentry kind="lib" path="lib/commons-net-3.0.1.jar"/>
+	<classpathentry kind="lib" path="lib/jackson-core-asl-1.9.2.jar"/>
+	<classpathentry kind="lib" path="lib/jackson-jaxrs-1.9.2.jar"/>
+	<classpathentry kind="lib" path="lib/jackson-mapper-asl-1.7.1.jar"/>
+	<classpathentry kind="lib" path="lib/jackson-xc-1.9.2.jar"/>
+	<classpathentry kind="lib" path="lib/jai_imageio-1.1.jar"/>
+	<classpathentry kind="lib" path="lib/jaxb-api-2.2.2.jar"/>
+	<classpathentry kind="lib" path="lib/jaxb-impl-2.2.3-1.jar"/>
+	<classpathentry kind="lib" path="lib/jersey-client-1.17.jar"/>
+	<classpathentry kind="lib" path="lib/jersey-core-1.17.jar"/>
+	<classpathentry kind="lib" path="lib/jersey-json-1.17.jar"/>
+	<classpathentry kind="lib" path="lib/jettison-1.1.jar"/>
+	<classpathentry kind="lib" path="lib/stax-api-1.0-2.jar"/>
+	<classpathentry kind="lib" path="lib/ura-bean-1.0.0.jar"/>
+	<classpathentry kind="lib" path="lib/ura-client-1.0.0.jar"/>
+	<classpathentry kind="lib" path="lib/ura-util-1.0.0.jar"/>
+	<classpathentry kind="lib" path="lib/commons-net-3.3.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

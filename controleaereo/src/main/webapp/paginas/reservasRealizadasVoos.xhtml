@@ -1,0 +1,64 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions">
+
+<h:head>
+	<link href="../css/style.css" rel="stylesheet" type="text/css" />
+	<style>
+.ui-messages-error-summary {
+	font-size: 12px;
+}
+
+.ui-messages {
+	width: 300px;
+	position: relative;
+	left: -50px;
+	top: -10px;
+}
+</style>
+	<link rel="stylesheet" href="../css/uniform.default.css" media="screen" />
+	<script
+		src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+	<script src="js/jquery.uniform.js"></script>
+	<title>Login</title>
+	<script>
+		$(function() {
+			$("select").uniform();
+			$("input").uniform();
+		});
+	</script>
+</h:head>
+<h:body>
+<h:form>
+	<div class="quadro" style="height:400px;width:500px;padding:10px;">
+		<div style="float:right;">
+			<p:commandLink id="sairBtn" action="#{clientes.sair}">  
+	       		Sair  
+	    	</p:commandLink>
+		</div>
+		<div style="float:left;">
+			<p:commandLink id="menuBtn" action="menuUsuario.jsf">
+	        	Menu
+	    	</p:commandLink>
+		</div>
+		<div class="form">
+			<h3>Escolha o Vôo</h3>
+			<p:dataTable id="listaTrechos" var="listVoos" value="#{voo.voosReservados}"
+				rowKey="#{voo.voos}" selectionMode="single" style="width:350px;">
+				<p:column headerText="Voos">
+					<h:commandLink action="reservasRealizadas.jsf?voo=listVoos.id" value="#{listVoos.trechos[0].nomeTrecho1} - #{listVoos.trechos[fn:length(listVoos.trechos)-1].nomeTrecho2}">
+						<f:param name="voo" value="#{listVoos.id}" />
+					</h:commandLink>
+				</p:column>
+				<p:column headerText="Trechos">
+					<h:outputText value="#{fn:length(listVoos.trechos)}" />
+				</p:column>
+			</p:dataTable>
+		</div>
+	</div>
+</h:form>
+</h:body>
+</html>

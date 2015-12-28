@@ -1,0 +1,101 @@
+<h:html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions">
+
+<h:head>
+	<title>Teste</title>
+	<link href="../css/style.css" rel="stylesheet" type="text/css" />
+	<style>
+		.ui-messages-error-summary {
+			font-size: 12px;
+		}
+		
+		.btnClose {
+			width: 35px;
+		}
+	</style>
+</h:head>
+<h:body>
+<h:form id="form1">
+	<div class="quadro" style="height: 650px; width: 700px;">
+		<div style="padding: 20px;">
+			<br /> <br />
+			<div style="float:right;">
+				<p:commandLink id="sairBtn" action="#{clientes.sair}">  
+	        		Sair  
+	    		</p:commandLink>
+			</div>
+			<h3>CADASTRO DE VOOS</h3>
+				<table>
+					<tr>
+						<td colspan="2"><p:messages id="messages" showDetail="true"
+								autoUpdate="true" closable="true" /></td>
+					</tr>
+					<tr>
+						<td colspan="2">Trecho:</td>
+					</tr>
+					<tr>
+						<td><p:watermark for="trecho1" value="Saida" /> <p:inputText
+								id="trecho1" name="trecho1" value="#{voo.trecho.nomeTrecho1}" />
+						</td>
+						<td><p:watermark for="trecho2" value="Origem" /> - <p:inputText
+								id="trecho2" name="trecho2" value="#{voo.trecho.nomeTrecho2}" />
+						</td>
+					</tr>
+					<tr>
+						<td><p:watermark id="watermarkpreco" for="preco"
+								value="Preço" /> <pe:inputNumber id="preco"
+								value="#{voo.trecho.preco}" symbol="R$ " /></td>
+					</tr>
+					<tr>
+						<td><p:watermark id="watermarkdatahora" for="dataHora"
+								value="Dara Hora" /> <p:inputMask id="dataHora" name="dataHora"
+								mask="99/99/9999 99:99" value="#{voo.trecho.dataHora}" /></td>
+					</tr>
+				</table>
+				<p:commandButton update="listaTrechos" id="cadastrarButton"
+					value="Trecho" actionListener="#{voo.addTrecho}"
+					icon="ui-icon-plusthick" styleClass="btn" />
+				<br />
+				<br />
+				<b>Trechos Adicionados</b>
+				<p:dataTable id="listaTrechos" var="trechoVoo"
+					value="#{voo.trechos}" rowKey="#{voo.trechos}"
+					selectionMode="single">
+					<p:column headerText="Trecho">
+						<h:outputText
+							value="#{trechoVoo.nomeTrecho1} - #{trechoVoo.nomeTrecho2}" />
+					</p:column>
+					<p:column headerText="Preço">
+						<h:outputText value="#{trechoVoo.preco}" />
+					</p:column>
+					<p:column headerText="Data Hora">
+						<h:outputText value="#{trechoVoo.dataHora}" />
+					</p:column>
+					<p:column headerText="">
+						<p:commandButton action="#{voo.remTrecho}" update="listaTrechos"
+							icon="ui-icon-closethick" styleClass="btnClose">
+							<f:setPropertyActionListener target="#{voo.trecho}"
+								value="#{trechoVoo}" />
+						</p:commandButton>
+					</p:column>
+				</p:dataTable>
+				
+				<br/>
+				<p:watermark for="economica" value="Qtd. Classe Economica" />
+				<pe:inputNumber  id="economica" name="economica" value="#{voo.assentosEconomica}" symbol=""  decimalPlaces="0" />
+				
+				<p:watermark for="executiva" value="Qtd. Classe Executiva" />
+				<pe:inputNumber  id="executiva" name="executiva" value="#{voo.assentosExecutiva}" symbol=""  decimalPlaces="0"  />
+				<br/>
+				<br/>
+				<br/>
+				<p:commandButton action="#{voo.cadastrarVoo}" value="Cadastrar Voo" styleClass="btn" update="form1" />
+		</div>
+	</div>
+</h:form>
+</h:body>
+</h:html>

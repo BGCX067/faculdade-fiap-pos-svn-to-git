@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal" >
+
+        <ImageButton
+            android:id="@+id/pizza"
+            android:layout_width="70dp"
+            android:layout_height="50dp"
+            android:contentDescription="@string/pizza"
+            android:src="@drawable/pizza_btn" />
+
+        <ImageButton
+            android:id="@+id/drinks"
+            android:layout_width="70dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="50dp"
+            android:contentDescription="@string/drinks"
+            android:src="@drawable/drinks" />
+    </LinearLayout>
+
+
+    <fragment
+        android:id="@+id/myfragment"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        class="br.com.fiap.pizza.fragment.SubMenuFragment" />
+
+    <Button
+        android:id="@id/proximoBtn"
+        android:layout_width="fill_parent"
+        android:layout_height="70dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/redbutton"
+        android:text="@string/Proximo" />
+
+</LinearLayout>

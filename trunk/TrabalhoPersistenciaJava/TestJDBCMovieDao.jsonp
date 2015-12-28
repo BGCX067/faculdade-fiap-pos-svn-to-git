@@ -1,0 +1,24 @@
+receiveJsonpData({
+"cols": [
+{"label": "method", "type": "string"},
+{"label": "Average time [s]", "type": "number"},
+{"label": "StdDev", "type": "number"},
+{"label": "GC time [s]", "type": "number"},
+{"label": "GC average [s]", "type": "number"},
+{"label": "StdDev", "type": "number"},
+{"label": "GC calls", "type": "number"},
+{"label": "benchmark rounds", "type": "number"},
+{"label": "warmup rounds", "type": "number"},
+{"label": "Total benchmark time", "type": "number"},
+{"label": "Total warmup time", "type": "number"}
+],
+"rows": [
+{"c": [{"v": "deleteMovie"}, {"v": 0.01}, {"v": 0.0}, {"v": 0.04}, {"v": 0.0}, {"v": 0.0}, {"v": 34}, {"v": 100}, {"v": 0}, {"v": 1.16}, {"v": 0.0}]},
+{"c": [{"v": "selectMoviesByStudioName"}, {"v": 0.05}, {"v": 0.02}, {"v": 0.22}, {"v": 0.0}, {"v": 0.0}, {"v": 280}, {"v": 100}, {"v": 0}, {"v": 5.4}, {"v": 0.0}]},
+{"c": [{"v": "selectMovieByActor"}, {"v": 1.26}, {"v": 0.02}, {"v": 5.52}, {"v": 0.0}, {"v": 0.0}, {"v": 4609}, {"v": 100}, {"v": 0}, {"v": 125.62}, {"v": 0.0}]},
+{"c": [{"v": "selectMovieByYear"}, {"v": 0.15}, {"v": 0.01}, {"v": 0.54}, {"v": 0.0}, {"v": 0.0}, {"v": 572}, {"v": 100}, {"v": 0}, {"v": 15.0}, {"v": 0.0}]},
+{"c": [{"v": "insertMovie"}, {"v": 0.01}, {"v": 0.02}, {"v": 0.02}, {"v": 0.0}, {"v": 0.0}, {"v": 15}, {"v": 100}, {"v": 0}, {"v": 1.25}, {"v": 0.0}]},
+{"c": [{"v": "selectMoviesByCategoryName"}, {"v": 0.01}, {"v": 0.0}, {"v": 0.02}, {"v": 0.0}, {"v": 0.0}, {"v": 15}, {"v": 100}, {"v": 0}, {"v": 0.91}, {"v": 0.0}]},
+{"c": [{"v": "selectActorByTitle"}, {"v": 0.14}, {"v": 0.02}, {"v": 0.5}, {"v": 0.0}, {"v": 0.0}, {"v": 529}, {"v": 100}, {"v": 0}, {"v": 14.14}, {"v": 0.0}]},
+{"c": [{"v": "validarcreateDao"}, {"v": 0.01}, {"v": 0.0}, {"v": 0.02}, {"v": 0.0}, {"v": 0.0}, {"v": 12}, {"v": 100}, {"v": 0}, {"v": 0.87}, {"v": 0.0}]}
+]});

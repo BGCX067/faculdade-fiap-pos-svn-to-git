@@ -1,0 +1,113 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:fn="http://java.sun.com/jstl/functions"
+	>
+<h:head>
+	<link href="../css/style.css" rel="stylesheet" type="text/css" />
+	<style>
+.ui-messages-error-summary {
+	font-size: 12px;
+}
+
+.ui-messages {
+	width: 300px;
+	position: relative;
+	left: -50px;
+	top: -10px;
+}
+</style>
+	<link rel="stylesheet" href="../css/uniform.default.css" media="screen" />
+	<script
+		src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+	<script src="js/jquery.uniform.js"></script>
+	<title>Login</title>
+	<script>
+		$(function() {
+			$("select").uniform();
+			$("input").uniform();
+		});
+		
+		
+		function selecteds(str){
+			var inputs=document.getElementsByTagName("input");
+			var selecteds = new Array();
+			cont = inputs.length -1;
+			while(cont != 0){
+				i = inputs[cont];
+				if(i.type=='checkbox'){
+					if(i.checked){
+						selecteds.push(i.value);
+						if(str=='onload'){
+							i.disabled=true;
+						}
+					}
+				}
+				cont--;
+			}
+			if(selecteds.length != 0){
+				document.getElementById("form1:selecteds").value=selecteds.toString();
+				if(str=='onload'){
+					window.location.href="confirmacao.jsf";
+				}
+			}else{
+				document.getElementById("form1:cancelarBtn").style.display="none";
+				document.getElementById("form1:alterarBtn").style.display="none";
+			}
+		}
+	</script>
+</h:head>
+<h:body onload="selecteds('onload')">
+<h:form id="form1">
+<p:inputText id="selecteds" name="selecteds" value="#{voo.selectedAssentos}" style="display:none;" />
+<div class="quadro" style="width:500px;padding:10px;">
+		<div style="float:right;">
+			<p:commandLink id="sairBtn" actionListener="#{clientes.sair}">
+        		Sair
+    		</p:commandLink>
+		</div>
+		<div style="float:left;">
+			<p:commandLink id="menuBtn" action="menuUsuario.jsf">
+	        	Menu
+	    	</p:commandLink>
+		</div>
+		<div class="form" style="width:400px;">
+			<h3>Escolha os Assentos</h3>
+			<p:dataTable id="listaTrechos" var="trecho" value="#{voo.vooById.trechos}"
+				rowKey="#{voo}" selectionMode="single" style="width:370px;">
+				<p:column headerText="Trechos">
+					<h:outputText value="#{trecho.nomeTrecho1} - #{trecho.nomeTrecho2}" />
+				</p:column>
+				<p:column headerText="Valor">
+					R$ <h:outputText value="#{trecho.preco}" />
+				</p:column>
+			</p:dataTable>
+			<br /><br />
+			
+			<p:dataTable var="assen" value="#{voo.assentoList}">
+				<p:column headerText="Assento">
+					<input type="checkbox" name="assento#{assen.id}" id="assento#{assen.id}"
+						checked="#{assen.selected}" value="#{assen.id}" onClick="selecteds('')" />
+					<label for="assento#{assen.id}">
+						<h:outputText value="assento #{assen.id}" />
+					</label>
+				</p:column>
+				<p:column headerText="Tipo">
+					<h:outputText value="#{assen.tipo}"/>
+				</p:column>
+			</p:dataTable>
+			<br />
+ 			<p:commandButton value="Reservar" action="#{voo.reservar}"
+           		ajax="false" />
+           	<p:commandButton value="Cancelar" action="#{voo.cancelar}"
+         		ajax="false" id="cancelarBtn" />
+           	<p:commandButton value="Alterar" action="#{voo.alterar}"
+           		ajax="false" id="alterarBtn" />
+		</div>
+	</div>
+</h:form>
+</h:body>
+</html>

@@ -1,0 +1,29 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+	
+<h:head>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<title>Login</title>
+</h:head>
+<h:body>
+	<div id="box">
+		<div class="elements">
+			<div class="avatar"></div>
+			<h:form>
+				<h:inputText id="username" class="username" value="#{loginManagedBean.usuario.email}" />
+				<p:watermark for="username" value="E-mail" />  
+				<h:inputSecret id="password" class="password" value="#{loginManagedBean.usuario.senha}"  />
+				<p:watermark for="password" value="Password" />
+				<h:commandButton value="SignIn" class="submit" action="#{loginManagedBean.login}" />
+			</h:form>
+		</div>
+	</div>
+	<div class="signup">
+		Not a registered user yet? <a href="cadastroUsuarios.faces">Sign up now!</a>
+	</div>
+
+</h:body>
+</html>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>webservice-provider</artifactId>
+		<groupId>br.com.example</groupId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>ws-ear</artifactId>
+	<packaging>ear</packaging>
+
+	<name>ws-ear</name>
+	<url>http://maven.apache.org</url>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.0.2</version>
+				<configuration>
+					<source>1.5</source>
+					<target>1.5</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-ear-plugin</artifactId>
+				<version>2.6</version>
+				<configuration>
+					<version>5</version>
+					<defaultLibBundleDir>lib</defaultLibBundleDir>
+					<modules>
+						<ejbModule>
+							<groupId>br.com.example</groupId>
+							<artifactId>ws-soap</artifactId>
+						</ejbModule>
+					</modules>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.openejb.maven</groupId>
+				<artifactId>tomee-maven-plugin</artifactId>
+				<configuration>
+					<tomeeVersion>1.6.0.2</tomeeVersion>
+					<tomeeClassifier>plus</tomeeClassifier>
+					<tomeeHttpPort>8182</tomeeHttpPort>
+					<reloadOnUpdate>true</reloadOnUpdate>
+					<synchronization>
+						<extensions>
+							<extension>.class</extension>
+							<extension>.properties</extension>
+						</extensions>
+					</synchronization>
+
+					<apps>
+						<app>br.com.example:ws-ear:1.0-SNAPSHOT:ear</app>
+					</apps>
+
+				</configuration>
+			</plugin>
+
+		</plugins>
+	</build>
+
+	<dependencies>
+		<dependency>
+			<groupId>br.com.example</groupId>
+			<artifactId>ws-soap</artifactId>
+			<version>1.0-SNAPSHOT</version>
+			<type>ejb</type>
+		</dependency>
+	</dependencies>
+</project>

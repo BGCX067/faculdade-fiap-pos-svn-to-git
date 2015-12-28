@@ -1,0 +1,19 @@
+receiveJsonpData({
+"cols": [
+{"label": "method", "type": "string"},
+{"label": "Average time [s]", "type": "number"},
+{"label": "StdDev", "type": "number"},
+{"label": "GC time [s]", "type": "number"},
+{"label": "GC average [s]", "type": "number"},
+{"label": "StdDev", "type": "number"},
+{"label": "GC calls", "type": "number"},
+{"label": "benchmark rounds", "type": "number"},
+{"label": "warmup rounds", "type": "number"},
+{"label": "Total benchmark time", "type": "number"},
+{"label": "Total warmup time", "type": "number"}
+],
+"rows": [
+{"c": [{"v": "selectStudioByName"}, {"v": 0.01}, {"v": 0.0}, {"v": 0.04}, {"v": 0.0}, {"v": 0.0}, {"v": 40}, {"v": 100}, {"v": 0}, {"v": 0.98}, {"v": 0.0}]},
+{"c": [{"v": "insertStudio"}, {"v": 0.0}, {"v": 0.0}, {"v": 0.0}, {"v": 0.0}, {"v": 0.0}, {"v": 3}, {"v": 100}, {"v": 0}, {"v": 0.16}, {"v": 0.0}]},
+{"c": [{"v": "validarcreateDao"}, {"v": 0.0}, {"v": 0.0}, {"v": 0.0}, {"v": 0.0}, {"v": 0.0}, {"v": 1}, {"v": 100}, {"v": 0}, {"v": 0.09}, {"v": 0.0}]}
+]});
